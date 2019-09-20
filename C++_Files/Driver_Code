@@ -35,20 +35,25 @@ void drive()
     Top_right.spin(directionType::fwd, Controller1.Axis2.value() * -1, velocityUnits::pct);
     Bottom_right.spin(directionType::fwd, Controller1.Axis2.value() * -1, velocityUnits::pct);
     }
-    if (Controller1.ButtonL1.pressing())
-    {
-        Lift_left.spin(directionType::rev);
-        Lift_right.spin(directionType::fwd);
-    }
-    else if (Controller1.ButtonL1.pressing())
-    {
-        Lift_left.spin(directionType::fwd);
-        Lift_right.spin(directionType::rev);
-    }
 }
 int main() {
     while(true)
     {
         drive();
+        if (Controller1.ButtonR1.pressing())
+        {
+            Lift_left.spin(directionType::rev);
+            Lift_right.spin(directionType::fwd);
+        }
+        else if (Controller1.ButtonL1.pressing())
+        {
+            Lift_left.spin(directionType::fwd);
+            Lift_right.spin(directionType::rev);
+        }
+        else
+        {
+          Lift_left.stop();
+          Lift_right.stop();
+        }
     }
 } 
