@@ -1,0 +1,35 @@
+#include "robot-config.h"
+          
+/*
+Set the motors to the correct ports
+*/
+void forward()
+{
+    Top_Left.rotateFor(360, rotationUnits::deg, 100, velocityUnits::pct, false);
+    Bottom_Left.rotateFor(360, rotationUnits::deg, 100, velocityUnits::pct, false);
+    Top_Right.rotateFor(360, rotationUnits::deg, 100, velocityUnits::pct, false);
+    Bottom_Left.rotateFor(360, rotationUnits::deg, 100, velocityUnits::pct, true);
+}
+void backward()
+{
+    Top_Left.rotateFor(-360, rotationUnits::deg, 100, velocityUnits::pct, false);
+    Bottom_Left.rotateFor(-360, rotationUnits::deg, 100, velocityUnits::pct, false);
+    Top_Right.rotateFor(360, rotationUnits::deg, 100, velocityUnits::pct, false);
+    Bottom_Left.rotateFor(360, rotationUnits::deg, 100, velocityUnits::pct, true);
+}
+void right()
+{
+    Top_Left.rotateFor(360, rotationUnits::deg, 100, velocityUnits::pct, false);
+    Bottom_Left.rotateFor(-360, rotationUnits::deg, 100, velocityUnits::pct, false);
+    Top_Right.rotateFor(-360, rotationUnits::deg, 100, velocityUnits::pct, false);
+    Bottom_Left.rotateFor(360, rotationUnits::deg, 100, velocityUnits::pct, true);
+}
+void left()
+{
+    Top_Left.rotateFor(-360, rotationUnits::deg, 100, velocityUnits::pct, false);
+    Bottom_Left.rotateFor(360, rotationUnits::deg, 100, velocityUnits::pct, false);
+    Top_Right.rotateFor(360, rotationUnits::deg, 100, velocityUnits::pct, false);
+    Bottom_Left.rotateFor(-360, rotationUnits::deg, 100, velocityUnits::pct, true);
+}
+int main() {
+}
