@@ -1,0 +1,9 @@
+//(it is block)
+when(STARTED){
+  if(Controller1.ButtonL1.pressing()){
+    clawmotor1.setRotation(360,degrees);
+    if(Controller1.ButtonR1.pressing()){
+      clawmotor1.setRotation(-360,degrees);
+    }
+  }
+}
