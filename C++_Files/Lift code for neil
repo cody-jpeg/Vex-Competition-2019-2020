@@ -1,0 +1,24 @@
+#include "robot-config.h"
+          
+
+int main() {
+    while(true) 
+    {
+        if (Controller1.ButtonR1.pressing()) 
+        {        
+            Lift_r.spin(directionType::fwd, 1000,velocityUnits::pct);
+            Lift_l.spin(directionType::fwd, 1000,velocityUnits::pct);
+        }     
+        else if (Controller1.ButtonL1.pressing()) 
+        {
+            Lift_r.spin(directionType::rev, 1000,velocityUnits::pct);
+            Lift_l.spin(directionType::rev, 1000,velocityUnits::pct);
+        }        
+            
+             
+    }
+
+}
+    
+    
+
